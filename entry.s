@@ -1,7 +1,9 @@
-	global entry
-	extern error
+	global entry_win
+	global entry_unix
 	section .text
-entry:
-  mov rax, 4
+entry_win:
   mov rax, rcx
+	ret
+entry_unix:
+  mov rax, rdi
 	ret

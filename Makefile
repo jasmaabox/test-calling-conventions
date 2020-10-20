@@ -1,5 +1,4 @@
 UNAME := $(shell uname)
-.PHONY: test
 
 ifeq ($(UNAME), Darwin)
   format=macho64
@@ -10,7 +9,7 @@ else
 endif
 
 build: entry.o main.o
-	gcc main.o entry.o -o app.exe
+	gcc main.o entry.o
 
 main.o: main.c
 	gcc -c main.c -o main.o
